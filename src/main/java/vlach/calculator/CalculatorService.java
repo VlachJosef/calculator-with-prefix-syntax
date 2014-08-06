@@ -13,6 +13,9 @@ class CalculatorService {
 		String fileName = null;
 		if(args.length == 1) {
 			fileName = args[0];
+		} else {
+			System.out.println("Please provide a path to an input file.");
+			return;
 		}
 		Path path = Paths.get(fileName);
 		if(!path.toFile().exists()) {
@@ -27,7 +30,7 @@ class CalculatorService {
 		} else {
 			System.out.println("Invalid input:"); 
 			System.out.println("***************"); 
-			System.out.println(input ); 
+			System.out.println(input); 
 			System.out.println("***************"); 
 		}
 	}
