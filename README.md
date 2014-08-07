@@ -29,8 +29,7 @@ You can build and run the code either with sbt:
 
 Or with maven:
 
-    $ mvn clean package
-    $ mvn exec:java -Dexec.mainClass="vlach.calculator.CalculatorService" -Dexec.args="input.txt"
+    $ mvn compile exec:java -Dexec.mainClass="vlach.calculator.CalculatorService" -Dexec.args="input.txt"
 
 Or you can build the program with a maven and then run it like a jar:
 
