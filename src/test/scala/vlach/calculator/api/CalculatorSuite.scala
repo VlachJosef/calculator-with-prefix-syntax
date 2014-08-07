@@ -90,7 +90,7 @@ class CalculatorSuite extends FlatSpec with Matchers {
     result should be(Optional.of(0.5))
   }
 
-  it should "support addition of negativ numbers" in {
+  it should "support addition of negative numbers" in {
     val input = """|plus -1
                    |apply -1""".stripMargin
     val result = Calculator.process(input)

@@ -25,7 +25,7 @@ trait DecimalNumberSupport {
  * Supported operators are: +, -, *, /
  * Every operator has defined aliases: 
  * 	for addition you can use plus|add|+ 
- * 	for substraction you can use minus|subtract|-
+ * 	for subtraction you can use minus|subtract|-
  * 	for multiplication you can use times|multiply|*
  * 	for division you can use divide|divided by|/
  * 
@@ -36,7 +36,7 @@ trait DecimalNumberSupport {
  * multiply -1.5
  * apply 6
  * 
- * will be transfromed to: Seq("6", "+1", "+2", "*-1.5")
+ * will be transformed to: Seq("6", "+1", "+2", "*-1.5")
  * 
  */
 class PrefixSyntax(val input: ParserInput) extends Parser with DecimalNumberSupport {
@@ -92,11 +92,11 @@ object Calculator {
   import scala.util._
   /**
    * Parse input String and if it will match syntax defined by PrefixSyntax, then it will 
-   * be transformed into input into CalculatorStandard and then the resuklt of computation will 
+   * be transformed into input into CalculatorStandard and then the result of computation will 
    * be returned like Optional(Double). In case there is a syntax error, Optional.empty() will be returned.     
    */
   def process(input: String): Optional[java.lang.Double] = {
-    // remove from input string windows file endings and replace them with linux file ensding
+    // remove from input string windows file endings and replace them with linux file ending
     val unixLineFeedInput = input.replaceAll("\r\n", "\n") 
     val result: Try[Double] = for {
       transformed: Seq[String] <- new PrefixSyntax(unixLineFeedInput).Input.run()

@@ -90,7 +90,7 @@ class PrefixSyntaxSuite extends FlatSpec with Matchers with TryValues {
     result.success.value should be(Seq("2", "/1"))
   }
 
-  it should "support negativ numbers" in {
+  it should "support negative numbers" in {
     val input = """|plus -1
                    |apply -2""".stripMargin
     val result = new PrefixSyntax(input).Input.run()
